@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Найти причину, а не симптом | Регрессивная терапия онлайн</title>
-  <meta name="description" content="Работа с глубинными причинами тревоги, отношений и внутренних состояний. Без эзотерики. Онлайн-сессии с мягким и безопасным подходом.">
+  <title>Регрессивная терапия – найти причину, не просто полегчать | Светлана Худякова</title>
+  <meta name="description" content="Регрессивная и гипнотерапия онлайн. Работаю с причиной – не с симптомами. Без эзотерики. Если вы уже пробовали и не помогло – именно с этого начнём.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -683,160 +683,112 @@
       .back-to-top svg { width: 18px; height: 18px; }
     }
 
-    /* ── Responsive: tablet 768px ── */
-    @media (max-width: 900px) {
-      #hero { min-height: 520px; }
-      .hero-bg-image { width: 100%; opacity: 0.32; -webkit-mask-image: none; mask-image: none; }
-      .hero-bg-overlay { background: rgba(11,46,46,0.9); }
-      .hero-grid { padding: 72px 0 64px; max-width: 100%; }
-      .method-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .cards-grid { grid-template-columns: 1fr; }
-      .cases-grid { grid-template-columns: 1fr; }
-      .offers-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .edu-two-cols { grid-template-columns: 1fr; gap: 32px; }
-      .about-photo {
-        display: flex;
-        max-width: 340px;
-        aspect-ratio: 4/3;
-        margin: 0 auto;
-      }
+    /* ── BASE RESPONSIVE RULES ── */
+    img, video { max-width: 100%; height: auto; }
+    .container { width: 100%; box-sizing: border-box; }
+
+    /* ── Responsive: 1024px ── */
+    @media (max-width: 1024px) {
+      .hero-grid { max-width: 100%; }
+      .about-photo { max-width: 400px; margin: 0 auto; }
+      .edu-two-cols { grid-template-columns: 1fr; gap: 40px; }
       .video-reviews-grid { grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto; }
-      .about-stats { grid-template-columns: repeat(3, 1fr); }
-      .method-result { padding: 32px 24px; }
+      .testimonials-carousel { grid-auto-columns: calc(50% - 12px); }
     }
 
-    /* ── Responsive: mobile 480px ── */
-    @media (max-width: 600px) {
+    /* ── Responsive: 768px ── */
+    @media (max-width: 768px) {
       body { overflow-x: hidden; }
-
-      /* Layout */
       .container { padding: 0 20px; }
-      section { padding: 80px 0; }
+      section { padding: 64px 0; }
 
-      /* Typography */
-      h1 { font-size: 1.85rem; line-height: 1.22; }
-      h2 { font-size: 1.45rem; }
-      h3 { font-size: 1.05rem; }
-      .section-sub { font-size: 1rem; margin-bottom: 32px; }
-
-      /* Nav: show burger, hide desktop CTA */
       .nav-logo img { height: 48px; }
       .nav-cta { display: none; }
       .burger { display: flex; }
-      nav { position: sticky; }
+      nav { position: sticky; top: 0; }
 
-      /* Hero */
       #hero { min-height: unset; padding-bottom: 0; }
+      .hero-bg-image { width: 100%; opacity: 0.32; -webkit-mask-image: none; mask-image: none; }
+      .hero-bg-overlay { background: rgba(11,46,46,0.9); }
+      .hero-grid { padding: 48px 0 40px; max-width: 100%; }
+
+      /* Convert grids to 1 column */
+      .method-grid, .steps-grid, .cards-grid, .cases-grid, .offers-grid, .about-grid, .edu-grid { grid-template-columns: 1fr; }
+      
+      .about-photo { max-width: 340px; aspect-ratio: 4/3; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .method-result { padding: 32px 24px; }
+      .testimonials-carousel { grid-auto-columns: 100%; }
+      
+      .video-reviews-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .cases-carousel { grid-auto-columns: minmax(300px, 100%); }
+
+      /* Buttons & Forms full width */
+      .form-frame { height: 900px; }
+      .cta-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+      .cta-actions .btn { width: 100%; }
+      .offer-card .btn { width: 100%; }
+      
+      .back-to-top { bottom: 24px; right: 24px; width: 44px; height: 44px; }
+      .back-to-top svg { width: 18px; height: 18px; }
+    }
+
+    /* ── Responsive: 480px ── */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      section { padding: 48px 0; }
+
+      h1 { font-size: 1.85rem; line-height: 1.25; }
+      h2 { font-size: 1.45rem; }
+      h3 { font-size: 1.1rem; }
+      p { font-size: 1rem; }
+      .section-sub { font-size: 1rem; margin-bottom: 24px; }
+      .btn { width: 100%; display: block; text-align: center; padding: 14px 20px; font-size: 0.95rem; }
+
       .hero-bg-image {
-        position: relative;
-        width: 100%; height: 220px;
-        opacity: 1;
-        object-fit: cover; object-position: center top;
+        position: relative; width: 100%; height: 260px; opacity: 1; object-fit: cover; object-position: center top;
         -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
         mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
         display: block;
       }
-      .hero-bg-overlay {
-        background:
-          rgba(11,46,46,0.82),
-          linear-gradient(to bottom, rgba(11,46,46,0.0) 0%, rgba(11,46,46,0.96) 100%);
-      }
-      .hero-grid {
-        padding: 24px 0 56px;
-        max-width: 100%;
-      }
-      .hero-tag { font-size: 0.72rem; margin-bottom: 16px; }
-      .hero-title { margin-bottom: 18px; }
-      .hero-sub {
-        font-size: 1rem;
-        line-height: 1.75;
-        margin-bottom: 28px;
-      }
-      .hero-cta { width: 100%; justify-content: center; padding: 15px 20px; font-size: 0.95rem; }
-      .hero-microtrust { font-size: 12px; text-align: center; }
-      .hero-actions { align-items: stretch; }
+      .hero-bg-overlay { background: linear-gradient(to bottom, rgba(11,46,46,0.1) 0%, rgba(11,46,46,0.96) 100%); }
+      .hero-title { margin-bottom: 16px; }
+      .hero-sub { font-size: 1rem; line-height: 1.6; margin-bottom: 24px; }
+      .hero-cta { display: flex; width: 100%; justify-content: center; }
+      .hero-actions { align-items: stretch; width: 100%; }
+      .hero-microtrust { font-size: 12px; text-align: center; width: 100%; }
 
-      /* Pain */
       .pain-list { grid-template-columns: 1fr; gap: 12px; }
-      .pain-item { padding: 18px 20px; font-size: 0.95rem; }
-      .pain-intro { font-size: 1rem; margin-bottom: 28px; }
-
-      /* What I Do */
-      .method-grid { gap: 16px; }
       .method-card { padding: 24px 20px; }
-      .method-result { padding: 28px 20px; font-size: 1rem; }
-
-      /* How it Works */
-      .steps-grid { gap: 12px; }
-      .step-card { padding: 20px; gap: 14px; }
+      .method-result { padding: 24px 20px; font-size: 1rem; }
+      .step-card { padding: 20px; gap: 14px; flex-direction: column; }
       .control-note { padding: 20px; font-size: 0.9rem; }
-
-      /* For whom */
-      .cards-grid { gap: 16px; }
       .topic-card { padding: 24px 20px; }
-
-      /* Cases */
-      .cases-carousel { grid-auto-columns: 85%; gap: 16px; padding-bottom: 16px; scroll-padding-left: 24px; padding-left: 24px; padding-right: 24px; margin-left: -24px; margin-right: -24px; width: calc(100% + 48px); }
-      .case-card { padding: 32px 24px; }
-      .case-quote { font-size: 0.95rem; padding: 20px; margin-top: 24px; }
       
-      /* Reviews */
-      .video-reviews-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
-
-      /* Offers */
-      .offers-grid { gap: 16px; }
+      .cases-carousel { gap: 16px; padding-bottom: 16px; scroll-padding-left: 16px; padding-left: 16px; padding-right: 16px; margin-left: -16px; margin-right: -16px; width: calc(100% + 32px); grid-auto-columns: 90%; }
+      .case-card { padding: 24px 20px; }
+      .case-quote { font-size: 0.95rem; padding: 16px; margin-top: 20px; }
+      .cases-nav { margin-right: 16px; margin-top: -24px; }
+      
       .offer-card { padding: 28px 20px; }
-      .offer-card .btn { width: 100%; }
-
-      /* About */
-      .about-grid { gap: 32px; }
-      .about-photo {
-        display: flex;
-        max-width: 100%;
-        width: 100%;
-        aspect-ratio: 3/2;
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-      }
-      .about-photo img {
-        border-radius: var(--radius-lg);
-      }
-      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-      .stat-card { padding: 14px 8px; }
+      
+      .about-photo { max-width: 100%; width: 100%; aspect-ratio: 3/2; border-radius: var(--radius-lg); overflow: hidden; display: flex; }
+      .about-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stat-card { padding: 14px 10px; }
       .stat-num { font-size: 1.4rem; }
       .stat-label { font-size: 0.72rem; }
-      .edu-grid { grid-template-columns: 1fr; }
-
-      /* FAQ */
-      .faq-question { padding: 18px 20px; font-size: 0.93rem; }
-      .faq-answer { padding: 0 20px 18px; }
+      
+      .faq-question { padding: 16px 20px; font-size: 0.93rem; gap: 12px; }
+      .faq-answer { padding: 0 20px 16px; }
       .faq-list { max-width: 100%; }
-
-      /* Form */
+      
       .form-wrap { border-radius: var(--radius); }
-      .form-frame { height: 860px; }
-
-      /* Final CTA */
-      .cta-actions { flex-direction: column; align-items: stretch; gap: 12px; }
-      .cta-actions .btn { width: 100%; }
+      .form-frame { height: 950px; }
+      
       .cta-text { font-size: 1rem; margin-bottom: 28px; }
-
-      /* Footer */
+      
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .footer-links { flex-direction: column; gap: 8px; }
-    }
-
-    /* ── Responsive: small phones 390px ── */
-    @media (max-width: 400px) {
-      .container { padding: 0 16px; }
-      h1 { font-size: 1.65rem; }
-      h2 { font-size: 1.3rem; }
-      .hero-sub { font-size: 0.92rem; }
-      .btn { padding: 14px 20px; font-size: 0.9rem; }
-      .about-stats { grid-template-columns: 1fr 1fr; }
-      section { padding: 56px 0; }
+      .footer-links { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
