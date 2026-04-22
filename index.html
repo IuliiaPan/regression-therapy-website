@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регрессивная терапия – найти причину, не просто полегчать | Светлана Худякова</title>
+  <meta name="description" content="Регрессивная и гипнотерапия онлайн. Работаю с причиной – не с симптомами. Без эзотерики. Если вы уже пробовали и не помогло – именно с этого начнём.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #1AB69D;
+      --accent-dark: #0D9580;
+      --bg: #F8F9FA;
+      --white: #ffffff;
+      --text: #1F2937;
+      --muted: #6B7280;
+      --light: #E9ECEF;
+      --radius: 16px;
+      --radius-lg: 24px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    /* ── Language Switch Structure ── */
+    html[lang="uk"] .lang-ru { display: none !important; }
+    html[lang="ru"] .lang-uk { display: none !important; }
+
+    /* ── Lang Modal ── */
+    .lang-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px); z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .lang-overlay.active { opacity: 1; pointer-events: auto; }
+    .lang-modal {
+      background: var(--white);
+      padding: 40px; border-radius: var(--radius-lg);
+      max-width: 400px; width: 90%; text-align: center;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+      transform: translateY(20px); transition: transform 0.3s;
+    }
+    .lang-overlay.active .lang-modal { transform: translateY(0); }
+    .lang-modal h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+    .lang-modal p { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; }
+    .lang-opts { display: flex; flex-direction: column; gap: 12px; }
+    .lang-btn {
+      padding: 16px; border-radius: var(--radius);
+      border: 1px solid #1B383E; background: var(--white);
+      font-weight: 600; cursor: pointer; transition: all 0.2s;
+      color: #1B383E; font-size: 1.05rem;
+    }
+    .lang-btn:hover { border-color: transparent; background: linear-gradient(135deg, #1B383E 0%, #2B555C 100%); color: #fff; box-shadow: 0 4px 12px rgba(27, 56, 62, 0.15); }
+
+    /* Header Switcher */
+    .header-lang { margin-right: 8px; display:flex; gap: 12px; font-weight: 600; font-size: 0.9rem; }
+    .header-lang button { background: none; border: none; cursor: pointer; color: var(--muted); padding: 4px; font-weight: 600; transition: color 0.2s; }
+    .header-lang button.active { color: var(--text); border-bottom: 2px solid var(--accent); }
+    .header-lang button:hover { color: var(--text); }
+
+    /* ── Layout ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 112px 0; }
+    section:nth-child(even) { background: var(--white); }
+
+    /* ── Typography ── */
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.3; }
+    h3 { font-size: 1.15rem; font-weight: 600; line-height: 1.4; }
+    p  { margin-bottom: 1.25rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .section-title { margin-bottom: 16px; }
+    .section-sub   { font-size: 1.1rem; color: var(--muted); margin-bottom: 48px; max-width: 600px; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.35s ease;
+      border: 2px solid transparent;
+      color: #fff;
+    }
+    .btn-primary { 
+      background: linear-gradient(135deg, #1B383E 0%, #2B555C 100%); 
+      box-shadow: 0 4px 12px rgba(27, 56, 62, 0.15);
+    }
+    .btn-primary:hover { 
+      background: linear-gradient(135deg, #23474F 0%, #36676F 100%); 
+      transform: translateY(-1px); 
+      box-shadow: 0 6px 16px rgba(27, 56, 62, 0.2); 
+    }
+    .btn-outline { 
+      background: transparent; 
+      border-color: #1B383E; 
+      color: #1B383E; 
+    }
+    .btn-outline:hover { 
+      background: linear-gradient(135deg, #1B383E 0%, #2B555C 100%); 
+      color: #fff; 
+      border-color: transparent;
+    }
+    .btn-white { 
+      background: #fff; 
+      color: #1B383E; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .btn-white:hover { 
+      background: linear-gradient(135deg, #1B383E 0%, #2B555C 100%); 
+      color: #fff; 
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--light);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .nav-logo img {
+      height: 64px; width: auto; display: block;
+    }
+    /* Fallback text (shown if img fails to load) */
+    .nav-logo-text {
+      font-weight: 700; font-size: 1rem; color: var(--text);
+      display: none;
+    }
+    /* Desktop nav links */
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.9rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { font-size: 0.9rem; }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      background: linear-gradient(135deg, #0F3D3E 0%, #123F3B 55%, #0B2E2E 100%);
+      overflow: hidden;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .hero-bg-image {
+      position: absolute;
+      right: 0; top: 0;
+      width: 56%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      /* Soft blend: left edge fades into dark bg, no hard cutout */
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 15%, black 32%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 15%, black 32%);
+    }
+    /* Subtle radial glow behind subject */
+    #hero::before {
+      content: '';
+      position: absolute;
+      right: 18%; top: 8%;
+      width: 460px; height: 460px;
+      background: radial-gradient(circle, rgba(26,182,157,0.07) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, #0B2E2E 18%, rgba(15,61,62,0.92) 38%, rgba(15,61,62,0.28) 64%, transparent 100%),
+        linear-gradient(to bottom, transparent 55%, rgba(11,46,46,0.45) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      padding: 48px 0 80px;
+      max-width: 580px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85);
+      padding: 6px 14px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase; margin-top: 0; margin-bottom: 24px;
+    }
+    .hero-tag::before { content: ''; display: block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .hero-title { margin-top: 0; margin-bottom: 24px; color: #fff; }
+    .hero-sub {
+      font-size: 1.15rem; color: rgba(255,255,255,0.78);
+      line-height: 2.05; margin-bottom: 40px; max-width: 520px;
+    }
+    .hero-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
+    .hero-cta {
+      padding: 16px 28px;
+      font-size: 1.05rem;
+      background: linear-gradient(135deg, #1B383E 0%, #2B555C 100%);
+      color: #fff;
+      border-color: transparent;
+      border-radius: 999px;
+      box-shadow: 0 8px 28px rgba(27, 56, 62, 0.38);
+    }
+    .hero-cta:hover {
+      background: linear-gradient(135deg, #23474F 0%, #36676F 100%);
+      box-shadow: 0 14px 36px rgba(27, 56, 62, 0.48);
+      transform: translateY(-2px);
+    }
+    .hero-microtrust {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 12px;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+    }
+
+    /* ── PAIN ── */
+    #pain { background: var(--bg); }
+    .pain-intro { font-size: 1.1rem; color: var(--muted); margin-bottom: 48px; max-width: 680px; }
+    .pain-list {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+    }
+    .pain-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      border-left: 3px solid var(--accent);
+      font-style: italic; color: var(--text);
+      line-height: 1.6;
+    }
+    .pain-note { margin-top: 40px; font-size: 1rem; color: var(--muted); }
+    .pain-note strong { color: var(--text); }
+
+    /* ── WHAT I DO ── */
+    #what-i-do { background: var(--white); }
+    .method-sub { font-size: 1.05rem; color: var(--muted); margin: 16px 0 48px; max-width: 560px; }
+    .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
+    .method-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s;
+    }
+    .method-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.1); }
+    .method-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(26,182,157,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; font-size: 1.3rem;
+    }
+    .method-card h3 { margin-bottom: 12px; }
+    .method-result {
+      background: linear-gradient(135deg, #0D4D4D 0%, #156856 100%);
+      border-radius: var(--radius-lg);
+      padding: 40px 48px;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem; line-height: 1.8;
+    }
+    .method-result strong { color: #fff; }
+
+    /* ── HOW IT WORKS ── */
+    #how-it-works { background: var(--bg); }
+    .steps-intro { font-size: 1rem; color: var(--muted); margin-bottom: 48px; max-width: 600px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-bottom: 40px; }
+    .step-card {
+      background: var(--white); border-radius: var(--radius); padding: 32px;
+      display: flex; gap: 20px;
+    }
+    .step-num {
+      width: 40px; height: 40px; min-width: 40px;
+      background: var(--accent); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem;
+    }
+    .step-card h3 { margin-bottom: 8px; }
+    .control-note {
+      background: rgba(26,182,157,0.06);
+      border: 1px solid rgba(26,182,157,0.2);
+      border-radius: var(--radius);
+      padding: 24px 32px;
+      font-size: 0.95rem; color: var(--text);
+    }
+    .control-note strong { color: var(--accent); }
+
+    /* ── WHO IT'S FOR ── */
+    #for-whom { background: var(--white); }
+    .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .topic-card {
+      background: var(--white); border-radius: var(--radius); padding: 32px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .topic-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
+    .topic-icon {
+      width: 48px; height: 48px;
+      background: rgba(26,182,157,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .topic-icon svg {
+      width: 22px; height: 22px;
+      stroke: #1AB69D;
+      stroke-width: 1.75;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .topic-card h3 { margin-bottom: 12px; }
+
+    /* ── CASES ── */
+    #cases { background: var(--bg); }
+    .cases-carousel-container { position: relative; margin-top: 48px; }
+    .cases-nav { display: flex; gap: 12px; justify-content: flex-end; margin-bottom: 24px; margin-top: -32px; }
+    .cases-nav-btn {
+      width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.06); background: var(--white);
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .cases-nav-btn:hover { background: var(--light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .cases-nav-btn svg { width: 20px; height: 20px; stroke: var(--text); stroke-width: 1.5; fill: none; }
+    
+    .cases-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(380px, 420px);
+      gap: 32px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 32px;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+    .cases-carousel::-webkit-scrollbar { display: none; }
+    .case-card {
+      scroll-snap-align: start;
+      background: var(--white); border-radius: var(--radius-lg); padding: 48px 40px;
+      position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      border-left: 4px solid var(--accent);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .case-card:hover {
+      transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); /* Soft hover shadow */
+    }
+    .case-category { font-size: 0.8rem; font-weight: 600; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .case-headline { font-size: 1.25rem; font-weight: 600; line-height: 1.4; color: var(--text); margin-bottom: 32px; font-style: italic; }
+    .case-label { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; margin-top: 24px; }
+    .case-text { font-size: 1rem; color: var(--text); margin-bottom: 0; line-height: 1.6; }
+    .case-quote {
+      font-style: italic; font-size: 1.05rem; line-height: 1.6; color: var(--text);
+      margin-top: 32px; padding: 24px;
+      background: #F3F4F6; border-radius: 12px;
+    }
+
+    /* ── MICRO-ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── OFFERS ── */
+    #offers { background: var(--white); }
+    .offers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+    .offer-card {
+      border-radius: var(--radius-lg); padding: 40px;
+      border: 2px solid var(--light); background: var(--white);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .offer-card.featured {
+      background: linear-gradient(135deg, #0D4D4D 0%, #1AB69D33 100%);
+      background: var(--white);
+      border-color: var(--accent);
+    }
+    .offer-badge {
+      display: inline-block;
+      background: var(--accent); color: #fff;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .offer-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+    .offer-sub { font-size: 0.9rem; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
+    .offer-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 24px; }
+    .offer-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 24px; line-height: 2; }
+    .offer-no-pressure { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-top: 12px; }
+    .offers-note { text-align: center; color: var(--muted); font-size: 0.95rem; }
+    .offers-note a { color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 360px 1fr; gap: 64px; align-items: start; }
+    .about-photo {
+      background: var(--white); border-radius: var(--radius-lg);
+      aspect-ratio: 3/4; display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .about-photo-placeholder {
+      text-align: center; color: var(--muted); padding: 32px; font-size: 0.85rem;
+    }
+    .about-photo-placeholder .icon { font-size: 2.5rem; margin-bottom: 12px; display: block; }
+    .about-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+    .about-title { color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+    .about-text { color: var(--text); margin-bottom: 32px; }
+    /* ── EDUCATION BLOCK ── */
+    .education-block { margin-top: 64px; }
+    .edu-title { margin-bottom: 32px; font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .edu-two-cols { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+    
+    .edu-diploma-wrapper {
+       background: var(--white); border-radius: var(--radius); padding: 12px;
+       box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+       border: 1px solid rgba(0,0,0,0.03);
+    }
+    .edu-diploma-wrapper img {
+       width: 100%; height: auto; display: block;
+       border-radius: calc(var(--radius) - 6px);
+    }
+    .edu-certs-action { margin-top: 20px; text-align: center; }
+
+    .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .edu-card { background: var(--white); border-radius: var(--radius); padding: 32px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.02); }
+    .edu-card .method-card-icon { width: 36px; height: 36px; margin-bottom: 12px; }
+    .edu-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+    .edu-card p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0; line-height: 1.4; }
+
+    /* ── TEXT TESTIMONIALS ── */
+    #text-testimonials { background: var(--bg); }
+    .testimonials-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc(33.3333% - 16px);
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 24px;
+      scrollbar-width: none;
+    }
+    .testimonials-carousel::-webkit-scrollbar { display: none; }
+    .testimonials-carousel { margin-top: 48px; }
+    /* ── REVIEWS ── */
+    #reviews { background: var(--white); }
+    .video-reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .video-card {
+      background: var(--white); border-radius: var(--radius); padding: 16px;
+      position: relative; cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-card:hover {
+      transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .video-thumbnail-wrapper {
+      position: relative; width: 100%; aspect-ratio: 9/16;
+      border-radius: calc(var(--radius) - 6px); overflow: hidden;
+      background: #e2e8f0;
+    }
+    .video-thumbnail-wrapper::after {
+      content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.4s ease; z-index: 1;
+    }
+    .video-card:hover .video-thumbnail-wrapper::after {
+      background: rgba(0,0,0,0.3);
+    }
+    .video-thumbnail { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .video-card:hover .video-thumbnail { transform: scale(1.05); }
+    .video-play-btn {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 56px; height: 56px; background: rgba(255,255,255,0.9);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: transform 0.2s ease, background 0.2s ease; z-index: 2;
+    }
+    .video-play-btn svg { width: 24px; height: 24px; fill: var(--accent); margin-left: 3px; }
+    .video-card:hover .video-play-btn { transform: translate(-50%, -50%) scale(1.08); background: #ffffff; box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .video-caption { margin-top: 16px; padding: 0 4px; text-align: center; }
+    .video-topic { font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+    .video-title { font-weight: 500; font-size: 0.95rem; line-height: 1.45; color: var(--text); }
+
+    /* Video Modal */
+    .video-modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(4px);
+      z-index: 2000; opacity: 0; visibility: hidden; transition: 0.3s ease;
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+    }
+    .video-modal-overlay.active { opacity: 1; visibility: visible; }
+    .video-modal-content {
+      position: relative; width: 100%; max-width: 400px;
+      aspect-ratio: 9/16; max-height: 90vh;
+      background: #000; border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .video-modal-close {
+      position: absolute; top: 16px; right: 16px; width: 40px; height: 40px;
+      background: rgba(0,0,0,0.5); border-radius: 50%; border: none; color: #fff; font-size: 1.8rem;
+      cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center;
+      z-index: 2010;
+    }
+    .video-modal-close:hover { background: rgba(0,0,0,0.8); }
+    .video-player { width: 100%; height: 100%; display: block; object-fit: contain; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--bg); }
+    .faq-intro { color: var(--muted); margin-bottom: 40px; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; }
+    .faq-item {
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; padding: 24px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-weight: 600; font-size: 1rem; text-align: left;
+      background: none; border: none; cursor: pointer; color: var(--text);
+      gap: 16px;
+    }
+    .faq-toggle {
+      width: 28px; height: 28px; min-width: 28px;
+      border-radius: 50%; background: rgba(26,182,157,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.2rem; font-weight: 300;
+      transition: all 0.2s;
+    }
+    .faq-answer {
+      padding: 0 28px 24px;
+      color: var(--muted); line-height: 1.8; display: none;
+    }
+    .faq-answer p { margin-bottom: 12px; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-cta-wrap { margin-top: 40px; }
+
+    /* ── FORM ── */
+    #form-section { background: var(--white); }
+    .form-wrap {
+      max-width: 720px; margin: 0 auto;
+      background: var(--bg); border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .form-header { padding: 40px 40px 32px; }
+    .form-frame { border: none; width: 100%; height: 780px; display: block; }
+
+    /* ── FINAL CTA ── */
+    #final-cta {
+      background: linear-gradient(135deg, #0D4D4D 0%, #114D4A 100%);
+      color: #fff;
+    }
+    #final-cta .section-label { color: rgba(255,255,255,0.5); }
+    .cta-inner { text-align: center; max-width: 640px; margin: 0 auto; }
+    .cta-title { color: #fff; margin-bottom: 24px; }
+    .cta-text { color: rgba(255,255,255,0.75); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.8; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-note { margin-top: 24px; font-size: 0.85rem; color: rgba(255,255,255,0.45); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0D1117; color: rgba(255,255,255,0.5);
+      padding: 48px 0; font-size: 0.85rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 24px; }
+    .footer-name { color: rgba(255,255,255,0.85); font-weight: 600; margin-bottom: 4px; }
+    .footer-placeholder { color: rgba(255,255,255,0.3); font-style: italic; font-size: 0.8rem; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-link { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .footer-link:hover { color: var(--accent); }
+
+    /* ── Burger nav ── */
+    .burger {
+      display: none;
+      flex-direction: column; justify-content: center; align-items: center;
+      width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer;
+      gap: 5px; padding: 4px;
+    }
+    .burger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--light);
+      padding: 20px 24px 24px;
+      flex-direction: column; gap: 12px;
+      z-index: 99;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu .btn { width: 100%; text-align: center; }
+
+    /* ── BACK TO TOP ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 48px;
+      height: 48px;
+      background: var(--accent);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(26,182,157,0.3);
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      background: #14947E;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(26,182,157,0.4);
+    }
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--white);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    @media (max-width: 768px) {
+      .back-to-top { bottom: 24px; right: 24px; width: 44px; height: 44px; }
+      .back-to-top svg { width: 18px; height: 18px; }
+    }
+
+    /* ── Responsive: tablet 768px ── */
+    @media (max-width: 900px) {
+      #hero { min-height: 520px; }
+      .hero-bg-image { width: 100%; opacity: 0.32; -webkit-mask-image: none; mask-image: none; }
+      .hero-bg-overlay { background: rgba(11,46,46,0.9); }
+      .hero-grid { padding: 72px 0 64px; max-width: 100%; }
+      .method-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .offers-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .edu-two-cols { grid-template-columns: 1fr; gap: 32px; }
+      .about-photo {
+        display: flex;
+        max-width: 340px;
+        aspect-ratio: 4/3;
+        margin: 0 auto;
+      }
+      .video-reviews-grid { grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .method-result { padding: 32px 24px; }
+    }
+
+    /* ── Responsive: mobile 480px ── */
+    @media (max-width: 600px) {
+      body { overflow-x: hidden; }
+
+      /* Layout */
+      .container { padding: 0 20px; }
+      section { padding: 80px 0; }
+
+      /* Typography */
+      h1 { font-size: 1.85rem; line-height: 1.22; }
+      h2 { font-size: 1.45rem; }
+      h3 { font-size: 1.05rem; }
+      .section-sub { font-size: 1rem; margin-bottom: 32px; }
+
+      /* Nav: show burger, hide desktop CTA */
+      .nav-logo img { height: 48px; }
+      .nav-cta { display: none; }
+      .burger { display: flex; }
+      nav { position: sticky; }
+
+      /* Hero */
+      #hero { min-height: unset; padding-bottom: 0; }
+      .hero-bg-image {
+        position: relative;
+        width: 100%; height: 220px;
+        opacity: 1;
+        object-fit: cover; object-position: center top;
+        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        display: block;
+      }
+      .hero-bg-overlay {
+        background:
+          rgba(11,46,46,0.82),
+          linear-gradient(to bottom, rgba(11,46,46,0.0) 0%, rgba(11,46,46,0.96) 100%);
+      }
+      .hero-grid {
+        padding: 24px 0 56px;
+        max-width: 100%;
+      }
+      .hero-tag { font-size: 0.72rem; margin-bottom: 16px; }
+      .hero-title { margin-bottom: 18px; }
+      .hero-sub {
+        font-size: 1rem;
+        line-height: 1.75;
+        margin-bottom: 28px;
+      }
+      .hero-cta { width: 100%; justify-content: center; padding: 15px 20px; font-size: 0.95rem; }
+      .hero-microtrust { font-size: 12px; text-align: center; }
+      .hero-actions { align-items: stretch; }
+
+      /* Pain */
+      .pain-list { grid-template-columns: 1fr; gap: 12px; }
+      .pain-item { padding: 18px 20px; font-size: 0.95rem; }
+      .pain-intro { font-size: 1rem; margin-bottom: 28px; }
+
+      /* What I Do */
+      .method-grid { gap: 16px; }
+      .method-card { padding: 24px 20px; }
+      .method-result { padding: 28px 20px; font-size: 1rem; }
+
+      /* How it Works */
+      .steps-grid { gap: 12px; }
+      .step-card { padding: 20px; gap: 14px; }
+      .control-note { padding: 20px; font-size: 0.9rem; }
+
+      /* For whom */
+      .cards-grid { gap: 16px; }
+      .topic-card { padding: 24px 20px; }
+
+      /* Cases */
+      .cases-carousel { grid-auto-columns: 85%; gap: 16px; padding-bottom: 16px; scroll-padding-left: 24px; padding-left: 24px; padding-right: 24px; margin-left: -24px; margin-right: -24px; width: calc(100% + 48px); }
+      .case-card { padding: 32px 24px; }
+      .case-quote { font-size: 0.95rem; padding: 20px; margin-top: 24px; }
+      
+      /* Reviews */
+      .video-reviews-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+
+      /* Offers */
+      .offers-grid { gap: 16px; }
+      .offer-card { padding: 28px 20px; }
+      .offer-card .btn { width: 100%; }
+
+      /* About */
+      .about-grid { gap: 32px; }
+      .about-photo {
+        display: flex;
+        max-width: 100%;
+        width: 100%;
+        aspect-ratio: 3/2;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+      }
+      .about-photo img {
+        border-radius: var(--radius-lg);
+      }
+      .about-stats { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat-card { padding: 14px 8px; }
+      .stat-num { font-size: 1.4rem; }
+      .stat-label { font-size: 0.72rem; }
+      .edu-grid { grid-template-columns: 1fr; }
+
+      /* FAQ */
+      .faq-question { padding: 18px 20px; font-size: 0.93rem; }
+      .faq-answer { padding: 0 20px 18px; }
+      .faq-list { max-width: 100%; }
+
+      /* Form */
+      .form-wrap { border-radius: var(--radius); }
+      .form-frame { height: 860px; }
+
+      /* Final CTA */
+      .cta-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+      .cta-actions .btn { width: 100%; }
+      .cta-text { font-size: 1rem; margin-bottom: 28px; }
+
+      /* Footer */
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .footer-links { flex-direction: column; gap: 8px; }
+    }
+
+    /* ── Responsive: small phones 390px ── */
+    @media (max-width: 400px) {
+      .container { padding: 0 16px; }
+      h1 { font-size: 1.65rem; }
+      h2 { font-size: 1.3rem; }
+      .hero-sub { font-size: 0.92rem; }
+      .btn { padding: 14px 20px; font-size: 0.9rem; }
+      .about-stats { grid-template-columns: 1fr 1fr; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img
+        src="images/svetlana-hudyakova-logo.svg"
+        alt="Светлана Худякова – регрессолог гипнотерапевт"
+        onerror="this.onerror=null;this.src='images/svetlana-hudyakova-logo.png';"
+      >
+      <span class="nav-logo-text">Светлана Худякова</span>
+    </a>
+    <ul class="nav-links">
+      <li>
+        <a href="#about"><span class="lang-uk">Про мене</span><span class="lang-ru">Обо мне</span></a>
+      </li>
+      <li>
+        <a href="#offers"><span class="lang-uk">Сесії</span><span class="lang-ru">Сессии</span></a>
+      </li>
+      <li>
+        <a href="#reviews"><span class="lang-uk">Відгуки</span><span class="lang-ru">Отзывы</span></a>
+      </li>
+      <li>
+        <a href="#form-section"><span class="lang-uk">Контакти</span><span class="lang-ru">Контакты</span></a>
+      </li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div class="header-lang">
+        <button onclick="setLang('uk')" id="btn-lang-uk" class="active">UK</button>
+        <button onclick="setLang('ru')" id="btn-lang-ru">RU</button>
+      </div>
+      <a href="#form-section" class="btn btn-primary nav-cta"><span class="lang-uk">Записатися</span><span class="lang-ru">Записаться</span></a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" role="navigation">
+    <a href="#about" style="color:var(--text);font-weight:600;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--light);display:block;" onclick="closeMenu()"><span class="lang-uk">Про мене</span><span class="lang-ru">Обо мне</span></a>
+    <a href="#offers" style="color:var(--text);font-weight:600;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--light);display:block;" onclick="closeMenu()"><span class="lang-uk">Сесії</span><span class="lang-ru">Сессии</span></a>
+    <a href="#how-it-works" style="color:var(--text);font-weight:600;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--light);display:block;" onclick="closeMenu()"><span class="lang-uk">Як проходить сесія</span><span class="lang-ru">Как проходит сессия</span></a>
+    <a href="#cases" style="color:var(--text);font-weight:600;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--light);display:block;" onclick="closeMenu()"><span class="lang-uk">Відгуки</span><span class="lang-ru">Отзывы</span></a>
+    <a href="#form-section" style="color:var(--text);font-weight:600;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--light);display:block;" onclick="closeMenu()"><span class="lang-uk">Контакти</span><span class="lang-ru">Контакты</span></a>
+    <a href="#form-section" class="btn btn-primary" style="margin-top:8px;" onclick="closeMenu()"><span class="lang-uk">Записатися на сесію</span><span class="lang-ru">Записаться на сессию</span></a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <img class="hero-bg-image" src="images/hero.jpg" alt="Светлана Худякова – регрессолог и гипнотерапевт" loading="eager">
+  <div class="hero-bg-overlay"></div>
+  <div class="container" style="position:relative;z-index:2;width:100%;">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag"><span class="lang-uk">Регресолог · Гіпнотерапевт</span><span class="lang-ru">Регрессолог · Гипнотерапевт</span></div>
+        <h1 class="hero-title">
+          <span class="lang-uk">Одне й те саме повторюється - у стосунках, грошах, здоров’ї?</span>
+          <span class="lang-ru">Одно и то же повторяется - в отношениях, деньгах, здоровье?</span>
+        </h1>
+        <p class="hero-sub" style="margin-top: 0;">
+          <span class="lang-uk">
+            Регресія працює там, де інші методи зупиняються.<br>
+            Результат - вже після першої сесії.
+          </span>
+          <span class="lang-ru">
+            Регрессия работает там, где остальные методы останавливаются.<br>
+            Результат - после первой сессии.
+          </span>
+        </p>
+        <div class="hero-actions">
+          <a href="#form-section" class="btn btn-primary hero-cta">
+            <span class="lang-uk">Записатися на сесію</span>
+            <span class="lang-ru">Записаться на сессию</span>
+          </a>
+          <p class="hero-microtrust">
+            <span class="lang-uk">Онлайн. 2–3 хвилини на запис.</span>
+            <span class="lang-ru">Онлайн. 2–3 минуты на запись.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN ── -->
+<section id="pain">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Впізнаєте себе?</span><span class="lang-ru">Узнаёте себя?</span></span>
+    <h2 class="section-title"><span class="lang-uk">Якщо хоча б одне з цього – про вас</span><span class="lang-ru">Если хоть одно из этого – про вас</span></h2>
+    <p class="pain-intro"><span class="lang-uk">Це не слабкість і не випадковість. Це патерн, у якого є причина.</span><span class="lang-ru">Это не слабость и не случайность. Это паттерн, у которого есть причина.</span></p>
+    <div class="pain-list">
+      <div class="pain-item"><span class="lang-uk">«Я знову обрала таку ж людину. Як я це допустила?»</span><span class="lang-ru">«Я снова выбрала того же человека. Как я это допустила?»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Я знаю, що треба піти. Але не можу. Що зі мною не так?»</span><span class="lang-ru">«Я знаю, что надо уйти. Но не могу. Что со мной не так?»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Троє стосунків поспіль - один і той самий сценарій. Це вже не випадковість.»</span><span class="lang-ru">«Три отношения подряд - один и тот же сценарий. Это уже не случайность.»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Стало легше у психолога - через місяць усе повернулося. Знову.»</span><span class="lang-ru">«Стала легче у психолога - через месяц всё вернулось. Снова.»</span></div>
+      <div class="pain-item"><span class="lang-uk">«У мене все є. Чому мені так погано?»</span><span class="lang-ru">«У меня всё есть. Почему мне так плохо?»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Я прокидаюся з тривогою - і не знаю, через що.»</span><span class="lang-ru">«Я просыпаюсь с тревогой - и не знаю, из-за чего.»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Відчуваю, що живу не своє життя. Але чиє - не розумію.»</span><span class="lang-ru">«Чувствую, что живу не свою жизнь. Но чью - не понимаю.»</span></div>
+      <div class="pain-item"><span class="lang-uk">«Пробувала все. Книги, медитації, психолога. Нічого не змінилося.»</span><span class="lang-ru">«Пробовала всё. Книги, медитации, психолога. Ничего не изменилось.»</span></div>
+      <div class="pain-item"><span class="lang-uk">«З грошима весь час важко - ніби щось не пускає вперед.»</span><span class="lang-ru">«С деньгами всё время трудно - как будто что-то не пускает вперёд.»</span></div>
+    </div>
+    <p class="pain-note" style="margin-top: 40px;">
+      <span class="lang-uk"><strong>Це не характер. Не доля. Це причина,</strong> яку можна знайти й усунути.<br>Я допомагаю знайти причину та змінити ситуацію.</span>
+      <span class="lang-ru"><strong>Это не характер. Не судьба. Это причина,</strong> которую можно найти и убрать.<br>Я помогаю найти причину и изменить ситуацию.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ── WHAT I DO ── -->
+<section id="what-i-do">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Мій підхід</span><span class="lang-ru">Мой подход</span></span>
+    <h2 class="section-title"><span class="lang-uk">Я знаходжу причину – і допомагаю її прибрати</span><span class="lang-ru">Я нахожу причину – и помогаю её убрать</span></h2>
+    <p class="method-sub"><span class="lang-uk">Більшість методів працюють з тим, що на поверхні: з емоціями, з поведінкою, з думками. Я працюю глибше — з тим, що лежить в основі цих станів.</span><span class="lang-ru">Большинство методов работают с тем, что на поверхности: с эмоциями, с поведением, с мыслями. Я работаю глубже — с тем, что лежит в основе этих состояний.</span></p>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h3><span class="lang-uk">Не розмови</span><span class="lang-ru">Не разговоры</span></h3>
+        <p><span class="lang-uk">Ми не будемо роками обговорювати, що ви відчуваєте. Замість цього - знайдемо конкретний момент, з якого почалася проблема.</span><span class="lang-ru">Мы не будем годами обсуждать, что вы чувствуете. Вместо этого - найдём конкретный момент, с которого началась проблема.</span></p>
+      </div>
+      <div class="method-card">
+        <div class="method-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/>
+          </svg>
+        </div>
+        <h3><span class="lang-uk">Не поради</span><span class="lang-ru">Не советы</span></h3>
+        <p><span class="lang-uk">Я не скажу вам «просто відпусти» або «зміни мислення». Тому що якби це працювало - ви б уже давно це зробили.</span><span class="lang-ru">Я не скажу вам «просто отпусти» или «поменяй мышление». Потому что если бы это работало - вы бы уже давно это сделали.</span></p>
+      </div>
+      <div class="method-card">
+        <div class="method-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <circle cx="12" cy="12" r="6"/>
+            <circle cx="12" cy="12" r="2"/>
+          </svg>
+        </div>
+        <h3><span class="lang-uk">Робота з причиною</span><span class="lang-ru">Работа с причиной</span></h3>
+        <p><span class="lang-uk">Ми знаходимо те, що запустило повторюваний сценарій - і опрацьовуємо це. Не на рівні розуму. На рівні того, де це насправді застрягло.</span><span class="lang-ru">Мы находим то, что запустило повторяющийся сценарий - и прорабатываем это. Не на уровне ума. На уровне того, где это на самом деле застряло.</span></p>
+      </div>
+    </div>
+    <div class="method-result">
+      <span class="lang-uk">
+        Тому результат відчувається інакше.<br>
+        Не <em>«я зрозуміла, в чому справа»</em> – а <strong>«я більше так не реагую»</strong>.<br>
+        Не інсайт на годину – а зміна, яка залишається.
+      </span>
+      <span class="lang-ru">
+        Поэтому результат ощущается иначе.<br>
+        Не <em>«я поняла, в чём дело»</em> – а <strong>«я больше так не реагирую»</strong>.<br>
+        Не инсайт на час – а изменение, которое остаётся.
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how-it-works">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Процес</span><span class="lang-ru">Процесс</span></span>
+    <h2 class="section-title"><span class="lang-uk">Як проходить сесія</span><span class="lang-ru">Как проходит сессия</span></h2>
+    <p class="steps-intro"><span class="lang-uk">Все відбувається онлайн. Ви – вдома, у комфортній обстановці. Сесія триває близько 1,5–2 годин. Ось що буде:</span><span class="lang-ru">Всё происходит онлайн. Вы – дома, в комфортной обстановке. Сессия длится около 1,5–2 часов. Вот что будет:</span></p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div>
+          <h3><span class="lang-uk">Розмова</span><span class="lang-ru">Разговор</span></h3>
+          <p><span class="lang-uk">Ми коротко обговорюємо ваш запит – що турбує, що хочете змінити.</span><span class="lang-ru">Мы коротко обсуждаем ваш запрос – что беспокоит, что хотите изменить.</span></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div>
+          <h3><span class="lang-uk">Розслаблення</span><span class="lang-ru">Расслабление</span></h3>
+          <p><span class="lang-uk">Ви заплющуєте очі та розслабляєтеся. Як перед сном – тільки ви все чуєте і усвідомлюєте.</span><span class="lang-ru">Вы закрываете глаза и расслабляетесь. Как перед сном – только вы всё слышите и осознаёте.</span></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div>
+          <h3><span class="lang-uk">Пошук причини</span><span class="lang-ru">Поиск причины</span></h3>
+          <p><span class="lang-uk">Я спрямовую вашу увагу всередину. Разом ми знаходимо момент, з якого почалася проблема.</span><span class="lang-ru">Я направляю ваше внимание внутрь. Вместе мы находим момент, с которого началась проблема.</span></p>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <div>
+          <h3><span class="lang-uk">Опрацювання</span><span class="lang-ru">Проработка</span></h3>
+          <p><span class="lang-uk">Ми опрацьовуємо те, що знайшли – щоб воно перестало на вас впливати.</span><span class="lang-ru">Мы прорабатываем то, что нашли – чтобы оно перестало на вас влиять.</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="control-note">
+      <span class="lang-uk">
+        <strong>Важливо знати:</strong> Це не гіпноз із телешоу. Ви не засинаєте. Вас ніхто не «програмує».
+        Ви у свідомості, ви все пам'ятаєте, ви можете зупинитися будь-якої миті.
+        Я ставлю запитання. Ви залишаєтеся в контролі – весь час.
+      </span>
+      <span class="lang-ru">
+        <strong>Важно знать:</strong> Это не гипноз из телешоу. Вы не засыпаете. Вас никто не «программирует».
+        Вы в сознании, вы всё помните, вы можете остановиться в любой момент.
+        Я задаю вопросы. Вы остаётесь в контроле – всё время.
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IT'S FOR ── -->
+<section id="for-whom">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Теми роботи</span><span class="lang-ru">Темы работы</span></span>
+    <h2 class="section-title"><span class="lang-uk">З чим я працюю</span><span class="lang-ru">С чем я работаю</span></h2>
+    <p class="section-sub"><span class="lang-uk">У кожної – своя історія. Але причини часто схожі. Ось з чим до мене приходять найчастіше:</span><span class="lang-ru">У каждой – своя история. Но причины часто похожи. Вот с чем ко мне приходят чаще всего:</span></p>
+    <div class="cards-grid">
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+        <h3><span class="lang-uk">Повторювані сценарії у стосунках</span><span class="lang-ru">Повторяющиеся сценарии в отношениях</span></h3>
+        <p><span class="lang-uk">Одні й ті ж самі типи партнерів. Одні й ті ж конфлікти. Відчуття, що ви ходите по колу – і не можете вийти. Знаходимо, що запускає цей сценарій, – і зупиняємо його.</span><span class="lang-ru">Одни и те же типы партнёров. Одни и те же конфликты. Ощущение, что вы ходите по кругу – и не можете выйти. Находим, что запускает этот сценарий, – и останавливаем его.</span></p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <h3><span class="lang-uk">Тривога, яка не минає</span><span class="lang-ru">Тревога, которая не уходит</span></h3>
+        <p><span class="lang-uk">Зовні все нормально – але всередині постійне напруження. Занепокоєння без причини. Відчуття, що ось-ось щось трапиться. Знаходимо, звідки це йде, – і прибираємо джерело.</span><span class="lang-ru">Внешне всё нормально – но внутри постоянное напряжение. Беспокойство без причины. Ощущение, что вот-вот что-то случится. Находим, откуда это идёт, – и убираем источник.</span></p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+        <h3><span class="lang-uk">Відчуття «я живу не своє життя»</span><span class="lang-ru">Ощущение «я живу не свою жизнь»</span></h3>
+        <p><span class="lang-uk">Не розумієте, чого хочете. Робите те, що потрібно іншим. Відчуваєте порожнечу, хоча зовні все на місці. Знаходимо момент, коли ви втратили контакт із собою, – і відновлюємо його.</span><span class="lang-ru">Не понимаете, чего хотите. Делаете то, что нужно другим. Чувствуете пустоту, хотя внешне всё на месте. Находим момент, когда вы потеряли контакт с собой, – и восстанавливаем его.</span></p>
+      </div>
+      <div class="topic-card">
+        <span class="topic-icon"><svg viewBox="0 0 24 24"><line x1="2" y1="5" x2="22" y2="5"/><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="12"/><line x1="18" y1="20" x2="18" y2="8"/></svg></span>
+        <h3><span class="lang-uk">Внутрішня стеля у грошах</span><span class="lang-ru">Внутренний потолок в деньгах</span></h3>
+        <p><span class="lang-uk">Хочете заробляти більше, але ніби щось гальмує. Не лінь. Не відсутність навичок. А щось усередині, що не пускає. Знаходимо цю установку – і прибираємо її.</span><span class="lang-ru">Хотите зарабатывать больше, но как будто что-то тормозит. Не лень. Не отсутствие навыков. А что-то внутри, что не пускает. Находим эту установку – и убираем её.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASES ── -->
+<section id="cases">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Результати</span><span class="lang-ru">Результаты</span></span>
+    <h2 class="section-title"><span class="lang-uk">Історії клієнтів</span><span class="lang-ru">Истории клиентов</span></h2>
+    <p class="section-sub"><span class="lang-uk">Реальні історії клієнтів. Без зайвих деталей - але з реальними результатами.</span><span class="lang-ru">Реальные истории клиентов. Без лишних деталей - но с настоящими результатами.</span></p>
+    <div class="cases-carousel-container">
+      <div class="cases-nav">
+        <button class="cases-nav-btn" id="cases-prev" aria-label="Previous card">
+          <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="cases-nav-btn" id="cases-next" aria-label="Next card">
+          <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <div class="cases-carousel" id="client-stories-carousel">
+        <!-- Card 1 -->
+        <div class="case-card fade-up">
+          <div class="case-headline">
+            <span class="lang-uk">Лишний вес — который не уходил годами</span>
+            <span class="lang-ru">Лишний вес — который не уходил годами</span>
+          </div>
+          <div class="case-label"><span class="lang-uk">ЗАПРОС</span><span class="lang-ru">ЗАПРОС</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Лишний вес. Диеты и усилия не давали стойкого результата.</span>
+            <span class="lang-ru">Лишний вес. Диеты и усилия не давали стойкого результата.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">ЧТО ОБНАРУЖИЛИ</span><span class="lang-ru">ЧТО ОБНАРУЖИЛИ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">В основе оказалась психологическая защита: тело воспринималось как что-то «правильное», менять его не хотелось. После первого сеанса пелена спала — пришло осознание проблемы.</span>
+            <span class="lang-ru">В основе оказалась психологическая защита: тело воспринималось как что-то «правильное», менять его не хотелось. После первого сеанса пелена спала — пришло осознание проблемы.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">РЕЗУЛЬТАТ</span><span class="lang-ru">РЕЗУЛЬТАТ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">После второго сеанса клиентка начала ощущать своё тело совершенно иначе. Появилось желание меняться — изнутри, а не через усилие воли.</span>
+            <span class="lang-ru">После второго сеанса клиентка начала ощущать своё тело совершенно иначе. Появилось желание меняться — изнутри, а не через усилие воли.</span>
+          </p>
+          <div class="case-quote" style="margin-top: auto;">
+            <span class="lang-uk"><strong>Вывод:</strong> корень был не в питании и не в дисциплине, а в том, как человек воспринимал себя на глубинном уровне.</span>
+            <span class="lang-ru"><strong>Вывод:</strong> корень был не в питании и не в дисциплине, а в том, как человек воспринимал себя на глубинном уровне.</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="case-card fade-up" style="animation-delay: 0.1s;">
+          <div class="case-headline">
+            <span class="lang-uk">Отношения с мужчинами не складывались никогда</span>
+            <span class="lang-ru">Отношения с мужчинами не складывались никогда</span>
+          </div>
+          <div class="case-label"><span class="lang-uk">ЗАПРОС</span><span class="lang-ru">ЗАПРОС</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Отношения не получаются сколько себя помню. Всё повторяется по одному сценарию.</span>
+            <span class="lang-ru">Отношения не получаются сколько себя помню. Всё повторяется по одному сценарию.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">ЧТО ОБНАРУЖИЛИ</span><span class="lang-ru">ЧТО ОБНАРУЖИЛИ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">В основе — глубокое состояние «я недостойна любви». За ним стояли самообесценивание и стыд, уходящие корнями в опыт, который долго оставался неосознанным.</span>
+            <span class="lang-ru">В основе — глубокое состояние «я недостойна любви». За ним стояли самообесценивание и стыд, уходящие корнями в опыт, который долго оставался неосознанным.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">РЕЗУЛЬТАТ</span><span class="lang-ru">РЕЗУЛЬТАТ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">После сессии восстановилось чувство собственного достоинства. Через полчаса после работы позвонил мужчина — впервые клиентка говорила с ним спокойно, уверенно и без привычной тревоги.</span>
+            <span class="lang-ru">После сессии восстановилось чувство собственного достоинства. Через полчаса после работы позвонил мужчина — впервые клиентка говорила с ним спокойно, уверенно и без привычной тревоги.</span>
+          </p>
+          <div class="case-quote" style="margin-top: auto;">
+            <span class="lang-uk"><strong>Вывод:</strong> проблема была не в партнёрах, а в том, что она несла внутри себя.</span>
+            <span class="lang-ru"><strong>Вывод:</strong> проблема была не в партнёрах, а в том, что она несла внутри себя.</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="case-card fade-up" style="animation-delay: 0.2s;">
+          <div class="case-headline">
+            <span class="lang-uk">Не могла заснуть без таблеток много лет</span>
+            <span class="lang-ru">Не могла заснуть без таблеток много лет</span>
+          </div>
+          <div class="case-label"><span class="lang-uk">ЗАПРОС</span><span class="lang-ru">ЗАПРОС</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Хроническая бессонница. Засыпала только с помощью препаратов.</span>
+            <span class="lang-ru">Хроническая бессонница. Засыпала только с помощью препаратов.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">ЧТО ОБНАРУЖИЛИ</span><span class="lang-ru">ЧТО ОБНАРУЖИЛИ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">В основе оказались состояния бессилия и стыда, связанные с глубоко зафиксированным внутренним опытом.</span>
+            <span class="lang-ru">В основе оказались состояния бессилия и стыда, связанные с глубоко зафиксированным внутренним опытом.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">РЕЗУЛЬТАТ</span><span class="lang-ru">РЕЗУЛЬТАТ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">После терапии пришли спокойствие, внутренняя опора и ощущение безопасности. В тот же вечер клиентка заснула без таблеток — впервые за долгие годы.</span>
+            <span class="lang-ru">После терапии пришли спокойствие, внутренняя опора и ощущение безопасности. В тот же вечер клиентка заснула без таблеток — впервые за долгие годы.</span>
+          </p>
+          <div class="case-quote" style="margin-top: auto;">
+            <span class="lang-uk"><strong>Вывод:</strong> корень бессонницы оказался не в режиме и не в стрессе, а в глубинных переживаниях, которые долго оставались заблокированными.</span>
+            <span class="lang-ru"><strong>Вывод:</strong> корень бессонницы оказался не в режиме и не в стрессе, а в глубинных переживаниях, которые долго оставались заблокированными.</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="case-card fade-up" style="animation-delay: 0.3s;">
+          <div class="case-headline">
+            <span class="lang-uk">Боялась проявляться — в жизни и в соцсетях</span>
+            <span class="lang-ru">Боялась проявляться — в жизни и в соцсетях</span>
+          </div>
+          <div class="case-label"><span class="lang-uk">ЗАПРОС</span><span class="lang-ru">ЗАПРОС</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Страх проявляться публично. Не могла понять, откуда он берётся.</span>
+            <span class="lang-ru">Страх проявляться публично. Не могла понять, откуда он берётся.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">ЧТО ОБНАРУЖИЛИ</span><span class="lang-ru">ЧТО ОБНАРУЖИЛИ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Внутренний ребёнок боится идти вперёд самостоятельно — он воспринимает себя слабым и нуждается в поддержке сильного человека рядом.</span>
+            <span class="lang-ru">Внутренний ребёнок боится идти вперёд самостоятельно — он воспринимает себя слабым и нуждается в поддержке сильного человека рядом.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">РЕЗУЛЬТАТ</span><span class="lang-ru">РЕЗУЛЬТАТ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">После сессии клиентка впервые чётко увидела природу своего страха. Появилось понимание, с чем именно работать дальше и в каком направлении двигаться.</span>
+            <span class="lang-ru">После сессии клиентка впервые чётко увидела природу своего страха. Появилось понимание, с чем именно работать дальше и в каком направлении двигаться.</span>
+          </p>
+          <div class="case-quote" style="margin-top: auto;">
+            <span class="lang-uk"><strong>Вывод:</strong> страх проявляться — это не черта характера. Это конкретный внутренний сценарий, который можно найти и изменить.</span>
+            <span class="lang-ru"><strong>Вывод:</strong> страх проявляться — это не черта характера. Это конкретный внутренний сценарий, который можно найти и изменить.</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="case-card fade-up" style="animation-delay: 0.4s;">
+          <div class="case-headline">
+            <span class="lang-uk">Ревность разрушала отношения и лишала покоя</span>
+            <span class="lang-ru">Ревность разрушала отношения и лишала покоя</span>
+          </div>
+          <div class="case-label"><span class="lang-uk">ЗАПРОС</span><span class="lang-ru">ЗАПРОС</span></div>
+          <p class="case-text">
+            <span class="lang-uk">Сильная ревность, постоянная тревога в отношениях. Не получалось справиться самостоятельно.</span>
+            <span class="lang-ru">Сильная ревность, постоянная тревога в отношениях. Не получалось справиться самостоятельно.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">ЧТО ОБНАРУЖИЛИ</span><span class="lang-ru">ЧТО ОБНАРУЖИЛИ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">В основе — неуверенность в себе и страх потерять близкого человека, которые запускали ревность как защитную реакцию.</span>
+            <span class="lang-ru">В основе — неуверенность в себе и страх потерять близкого человека, которые запускали ревность как защитную реакцию.</span>
+          </p>
+          <div class="case-label"><span class="lang-uk">РЕЗУЛЬТАТ</span><span class="lang-ru">РЕЗУЛЬТАТ</span></div>
+          <p class="case-text">
+            <span class="lang-uk">После сессии эмоционально-образной терапии пришли внутреннее спокойствие и уверенность в себе. Отношения перестали быть источником постоянного беспокойства.</span>
+            <span class="lang-ru">После сессии эмоционально-образной терапии пришли внутреннее спокойствие и уверенность в себе. Отношения перестали быть источником постоянного беспокойства.</span>
+          </p>
+          <div class="case-quote" style="margin-top: auto;">
+            <span class="lang-uk"><strong>Вывод:</strong> ревность — это не про партнёра. Это про то, как человек ощущает свою ценность внутри.</span>
+            <span class="lang-ru"><strong>Вывод:</strong> ревность — это не про партнёра. Это про то, как человек ощущает свою ценность внутри.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── REVIEWS ── -->
+<section id="reviews" style="background: var(--bg); padding-top: 0;">
+  <div class="container cases-reviews-transition" style="text-align: center; padding: 12px 0 64px; max-width: 700px; margin: 0 auto;">
+    <p style="font-size: 1.15rem; color: var(--muted); line-height: 1.6;">
+      <span class="lang-uk">Іноді краще за будь-які описи говорять самі люди, які вже пройшли цей шлях.</span>
+      <span class="lang-ru">Иногда лучше любых описаний говорят сами люди, которые уже прошли этот путь.</span>
+    </p>
+  </div>
+  <div class="container">
+    <div class="video-reviews-grid">
+      <!-- Card 1 -->
+      <div class="video-card fade-up" onclick="openVideoModal('videos/svetlana-review-video-1.mp4')" style="animation-delay: 0.1s;">
+        <div class="video-thumbnail-wrapper">
+          <img src="reviews/svetlana-review-poster-1.png" alt="Видеоотзыв 1" class="video-thumbnail" onerror="this.style.display='none'">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-caption">
+          <div class="video-topic"><span class="lang-uk">Клієнтка · Стосунки</span><span class="lang-ru">Клиентка · Отношения</span></div>
+          <div class="video-title"><span class="lang-uk">«Чому в мене не складаються стосунки з чоловіками»</span><span class="lang-ru">«Почему у меня не складываются отношения с мужчинами»</span></div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="video-card fade-up" onclick="openVideoModal('videos/svetlana-review-video-2.mp4')" style="animation-delay: 0.2s;">
+        <div class="video-thumbnail-wrapper">
+          <img src="reviews/svetlana-review-poster-2.png" alt="Видеоотзыв 2" class="video-thumbnail" onerror="this.style.display='none'">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-caption">
+          <div class="video-topic"><span class="lang-uk">Клієнтка · Стосунки</span><span class="lang-ru">Клиентка · Отношения</span></div>
+          <div class="video-title"><span class="lang-uk">«Претензії до чоловіка та моє ставлення до нього»</span><span class="lang-ru">«Претензии к мужу и мое отношение к нему»</span></div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="video-card fade-up" onclick="openVideoModal('videos/svetlana-review-video-3.mp4')" style="animation-delay: 0.3s;">
+        <div class="video-thumbnail-wrapper">
+          <img src="reviews/svetlana-review-poster-3.png" alt="Видеоотзыв 3" class="video-thumbnail" onerror="this.style.display='none'">
+          <div class="video-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="video-caption">
+          <div class="video-topic"><span class="lang-uk">Клієнтка · Страхи</span><span class="lang-ru">Клиентка · Страхи</span></div>
+          <div class="video-title"><span class="lang-uk">«Страх водіння та складання іспиту»</span><span class="lang-ru">«Страх вождения и сдачи экзамена»</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OFFERS ── -->
+<section id="offers">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Формати</span><span class="lang-ru">Форматы</span></span>
+    <h2 class="section-title"><span class="lang-uk">Формати роботи</span><span class="lang-ru">Форматы работы</span></h2>
+    <p class="section-sub"><span class="lang-uk">Два формати – залежно від того, на якому етапі ви знаходитесь.</span><span class="lang-ru">Два формата – в зависимости от того, на каком этапе вы находитесь.</span></p>
+    <div class="offers-grid">
+      <div class="offer-card">
+        <h3><span class="lang-uk">Діагностична сесія</span><span class="lang-ru">Диагностическая сессия</span></h3>
+        <div class="offer-sub"><span class="lang-uk">Для тих, хто хоче спробувати</span><span class="lang-ru">Для тех, кто хочет попробовать</span></div>
+        <div class="offer-desc">
+          <span class="lang-uk">Одна зустріч, на якій ми визначаємо ваш запит і знаходимо, звідки росте проблема. Ви вже на першій сесії зрозумієте, з чим маєте справу – і чи потрібно йти глибше.</span>
+          <span class="lang-ru">Одна встреча, на которой мы определяем ваш запрос и находим, откуда растёт проблема. Вы уже на первой сессии поймёте, с чем имеете дело – и нужно ли идти глубже.</span>
+        </div>
+        <div class="offer-meta">
+          <span class="lang-uk">⏱ Тривалість: ~1,5–2 години<br>💻 Формат: онлайн, 1 на 1</span>
+          <span class="lang-uk">⏱ Тривалість: ~1,5–2 години<br>💻 Формат: онлайн, 1 на 1</span>
+          <span class="lang-ru">⏱ Длительность: ~1,5–2 часа<br>💻 Формат: онлайн, 1 на 1</span>
+        </div>
+        <a href="#form-section" class="btn btn-outline"><span class="lang-uk">Записатися</span><span class="lang-ru">Записаться</span></a>
+        <div class="offer-no-pressure"><span class="lang-uk">Без зобов'язань</span><span class="lang-ru">Без обязательств</span></div>
+      </div>
+      <div class="offer-card featured">
+        <div class="offer-badge"><span class="lang-uk">Рекомендований формат</span><span class="lang-ru">Рекомендуемый формат</span></div>
+        <h3><span class="lang-uk">Пакет глибокої роботи</span><span class="lang-ru">Пакет глубокой работы</span></h3>
+        <div class="offer-sub"><span class="lang-uk">Для тих, хто готовий вирішити запит</span><span class="lang-ru">Для тех, кто готов решить запрос</span></div>
+        <div class="offer-desc">
+          <span class="lang-uk">4–6 сесій – повний цикл роботи з однією темою. Знаходимо причину. Опрацьовуємо. Закріплюємо. Не роки терапії – а точкова, глибока робота з конкретним результатом.</span>
+          <span class="lang-ru">4–6 сессий – полный цикл работы с одной темой. Находим причину. Прорабатываем. Закрепляем. Не годы терапии – а точечная, глубокая работа с конкретным результатом.</span>
+        </div>
+        <div class="offer-meta">
+          <span class="lang-uk">⏱ Тривалість: 4–6 зустрічей по ~1,5–2 години<br>💻 Формат: онлайн, 1 на 1<br>🖓 Інтервал: 1 раз на 1–2 тижні</span>
+          <span class="lang-ru">⏱ Длительность: 4–6 встреч по ~1,5–2 часа<br>💻 Формат: онлайн, 1 на 1<br>🖓 Интервал: 1 раз в 1–2 недели</span>
+        </div>
+        <a href="#form-section" class="btn btn-primary"><span class="lang-uk">Записатися</span><span class="lang-ru">Записаться</span></a>
+      </div>
+    <p class="offers-note"><span class="lang-uk">Не знаєте, який формат вибрати? <a href="https://t.me/">Напишіть мені</a> – підкажу.</span><span class="lang-ru">Не знаете, какой формат выбрать? <a href="https://t.me/">Напишите мне</a> – подскажу.</span></p>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img
+          src="images/about.jpg"
+          alt="Светлана Худякова - регрессолог и гипнотерапевт"
+          loading="lazy"
+          style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:var(--radius-lg);"
+        >
+      </div>
+      <div>
+        <span class="section-label"><span class="lang-uk">Про фахівця</span><span class="lang-ru">О специалисте</span></span>
+        <div class="about-name"><span class="lang-uk">Світлана Худякова</span><span class="lang-ru">Светлана Худякова</span></div>
+        <div class="about-title"><span class="lang-uk">Терапевт глибинних причин</span><span class="lang-ru">Терапевт глубинных причин</span></div>
+        <div class="about-text">
+          <span class="lang-uk">
+            <p>Я працюю з жінками, які вже не вперше стикаються з однією і тією ж ситуацією.</p>
+            <p>Психолог, книги, медитації.<br>
+            Іноді стає легше.<br>
+            Але минає час – і все повертається.</p>
+            <p>Це не тому, що ви робите щось не так.<br>
+            Просто причина залишається на місці.</p>
+            <p>На сесії ми не обговорюємо все по колу.<br>
+            Ми знаходимо, що саме запускає цей сценарій – і прибираємо це.</p>
+            <p>Коли причина йде, змінюється не тільки стан на час –<br>
+            змінюється сама ситуація.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Я работаю с женщинами, которые уже не первый раз сталкиваются с одной и той же ситуацией.</p>
+            <p>Психолог, книги, медитации.<br>
+            Иногда становится легче.<br>
+            Но проходит время – и всё возвращается.</p>
+            <p>Это не потому, что вы делаете что-то не так.<br>
+            Просто причина остаётся на месте.</p>
+            <p>На сессии мы не разбираем всё по кругу.<br>
+            Мы находим, что именно запускает этот сценарий – и убираем это.</p>
+            <p>Когда причина уходит, меняется не только состояние на время –<br>
+            меняется сама ситуация.</p>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION BLOCK -->
+    <div class="education-block">
+      <h3 class="edu-title"><span class="lang-uk">Освіта та підготовка</span><span class="lang-ru">Образование и подготовка</span></h3>
+      
+      <div class="edu-two-cols">
+        <!-- TEXT CARDS (LEFT) -->
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="method-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+              </svg>
+            </div>
+            <h4><span class="lang-uk">Навчання регресії</span><span class="lang-ru">Обучение регрессии</span></h4>
+            <p><span class="lang-uk">Школа регресій О. Кройтора</span><span class="lang-ru">Школа регрессий А. Кройтора</span></p>
+          </div>
+          <div class="edu-card">
+            <div class="method-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <h4><span class="lang-uk">Гіпнотерапія</span><span class="lang-ru">Гипнотерапия</span></h4>
+            <p><span class="lang-uk">Практика та методи роботи з підсвідомістю</span><span class="lang-ru">Практика и методы работы с подсознанием</span></p>
+          </div>
+          <div class="edu-card">
+            <div class="method-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 2.5 2.5 0 0 1-.35-4.52 2.5 2.5 0 0 1 1.76-4.14A2.5 2.5 0 0 1 9.5 2Z"/>
+                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 2.5 2.5 0 0 0 .35-4.52 2.5 2.5 0 0 0-1.76-4.14A2.5 2.5 0 0 0 14.5 2Z"/>
+              </svg>
+            </div>
+            <h4><span class="lang-uk">Додаткова підготовка</span><span class="lang-ru">Дополнительная подготовка</span></h4>
+            <p><span class="lang-uk">Психологія, травма, ПТСР, внутрішня дитина</span><span class="lang-ru">Психология, травма, ПТСР, внутренний ребёнок</span></p>
+          </div>
+          <div class="edu-card">
+            <div class="method-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1AB69D" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <h4><span class="lang-uk">Практика</span><span class="lang-ru">Практика</span></h4>
+            <p><span class="lang-uk">300+ проведених сесій</span><span class="lang-ru">300+ проведённых сессий</span></p>
+          </div>
+        </div>
+
+        <!-- FEATURED DIPLOMA (RIGHT) -->
+        <div class="edu-diploma-col">
+          <div class="edu-diploma-wrapper">
+            <img src="images/certificates/regression-diploma-kroitor.jpg" alt="Диплом Школы Регрессий А. Кройтора" loading="lazy">
+          </div>
+
+          <div class="edu-certs-action">
+            <a href="certificates.html" class="btn btn-outline" style="width: 100%; padding-top: 20px; padding-bottom: 20px; font-size: 0.95rem;"><span class="lang-uk">Дивитися всі дипломи та сертифікати</span><span class="lang-ru">Смотреть все дипломы и сертификаты</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Питання</span><span class="lang-ru">Вопросы</span></span>
+    <h2 class="section-title"><span class="lang-uk">Питання, які зазвичай виникають</span><span class="lang-ru">Вопросы, которые обычно возникают</span></h2>
+    <p class="faq-intro"><span class="lang-uk">Якщо у вас є питання – найімовірніше, воно вже тут.</span><span class="lang-ru">Если у вас есть вопрос – скорее всего, он уже здесь.</span></p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Що таке регресія простими словами?</span><span class="lang-ru">Что такое регрессия простыми словами?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Це спосіб знайти, звідки росте ваша ситуація.</p>
+            <p>Що одного разу сталося. Що ви тоді вирішили про себе або про людей. І як це рішення досі тихо керує вашим життям.</p>
+            <p>Багато хто приходить із відчуттям: «я все розумію – але нічого не змінюється». Ось саме з цього моменту і починається наша робота.</p>
+            <p>Ми не шукаємо нічого страшного. Ми шукаємо причину.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Это способ найти, откуда растёт ваша ситуация.</p>
+            <p>Что однажды произошло. Что вы тогда решили о себе или о людях. И как это решение до сих пор тихо управляет вашей жизнью.</p>
+            <p>Многие приходят с ощущением: «я всё понимаю – но ничего не меняется». Вот именно с этого момента и начинается наша работа.</p>
+            <p>Мы не ищем ничего страшного. Мы ищем причину.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Це езотерика?</span><span class="lang-ru">Это эзотерика?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Ні. І це одне з перших запитань, яке ставлять майже всі.</p>
+            <p>Регресія – це робота з пам'яттю та емоціями. Без «енергій», «порчі» та «минулих життів» – якщо тільки ви самі не захочете досліджувати щось у цьому напрямку.</p>
+            <p>Ми працюємо з тим, що реально сталося у вашому житті. І дивимося, що змінилося після.</p>
+            <p>Якщо вас турбує «а раптом це несерйозно» або «а раптом мене обдурять» – це зрозуміло. Саме тому перша зустріч – діагностична. Ви самі вирішуєте після неї, продовжувати чи ні.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Нет. И это один из первых вопросов, который задают почти все.</p>
+            <p>Регрессия – это работа с памятью и эмоциями. Без «энергий», «порчи» и «прошлых жизней» – если только вы сами не захотите исследовать что-то в этом направлении.</p>
+            <p>Мы работаем с тем, что реально произошло в вашей жизни. И смотрим, что изменилось после.</p>
+            <p>Если вас беспокоит «а вдруг это несерьёзно» или «а вдруг меня обманут» – это понятно. Именно поэтому первая встреча – диагностическая. Вы сами решаете после неё, продолжать или нет.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Я втрачу контроль? Мене будуть гіпнотизувати?</span><span class="lang-ru">Я потеряю контроль? Меня будут гипнотизировать?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Не втратите. Зовсім.</p>
+            <p>Це не гіпноз із телевізора. Ви не засинаєте. Ніхто вас не «програмує».</p>
+            <p>Ви перебуваєте в розслабленому стані – ніби лежите із заплющеними очима перед сном. Чуєте мій голос. Усвідомлюєте, де перебуваєте. Пам'ятаєте все.</p>
+            <p>Ви можете зупинитися будь-якої миті. Ви можете щось не говорити. Ви вирішуєте, куди ми йдемо.</p>
+            <p>Я ставлю запитання. Ви залишаєтеся в контролі – весь час.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Не потеряете. Совсем.</p>
+            <p>Это не гипноз из телевизора. Вы не засыпаете. Никто вас не «программирует».</p>
+            <p>Вы находитесь в расслабленном состоянии – как будто лежите с закрытыми глазами перед сном. Слышите мой голос. Осознаёте, где находитесь. Помните всё.</p>
+            <p>Вы можете остановиться в любой момент. Вы можете чтось не говорить. Вы решаете, куда мы идём.</p>
+            <p>Я задаю вопросы. Вы остаётесь в контроле – всё время.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Це працює онлайн так само, як наживо?</span><span class="lang-ru">Это работает онлайн так же, как вживую?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Так. Формат не впливає на глибину роботи.</p>
+            <p>Вам потрібне тихе місце, навушники та зручне положення – лежачи або сидячи. Більше нічого.</p>
+            <p>Більшість моїх клієнтів працюють саме онлайн – з різних міст і країн. Результати не відрізняються від очного формату.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Да. Формат не влияет на глубину работы.</p>
+            <p>Вам нужно тихое место, наушники и удобное положение – лёжа или сидя. Больше ничего.</p>
+            <p>Большинство моих клиентов работают именно онлайн – из разных городов и стран. Результаты не отличаются от очного формата.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Скільки сесій мені потрібно?</span><span class="lang-ru">Сколько сессий мне нужно?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Залежить від запиту – і від того, що саме ми знаходимо.</p>
+            <p>Багато хто приходить із досвідом: «була у психолога, стало легше – через місяць усе повернулося». Це не означає, що допомога не працює. Це означає, що не дісталися до причини.</p>
+            <p>Діагностична сесія – одна зустріч. Ми визначаємо запит, знаходимо, звідки це йде, і розуміємо, що потрібно далі.</p>
+            <p>Для повноцінної роботи з однією темою зазвичай потрібно 4–6 сесій. Цього достатньо, щоб не просто «полегшало», а щоб ситуація змінилася – і не повернулася.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Зависит от запроса – и от того, что именно мы находим.</p>
+            <p>Многие приходят с опытом: «была у психолога, стало легче – через месяц всё вернулось». Это не значит, что помощь не работает. Это значит, что не добрались до причины.</p>
+            <p>Диагностическая сессия – одна встреча. Мы определяем запрос, находим, откуда это идёт, и понимаем, что нужно дальше.</p>
+            <p>Для полноценной работы с одной темой обычно нужно 4–6 сессий. Этого достаточно, чтобы не просто «полегчало», а чтобы ситуация изменилась – и не вернулась.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Що якщо я нічого не відчую чи не побачу?</span><span class="lang-ru">Что если я ничего не почувствую или не увижу?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Це нормально – і це не означає, що нічого не відбувається.</p>
+            <p>Багато хто хвилюється: «а раптом у мене не вийде» або «я не той тип». Майже завжди це виявляється марним.</p>
+            <p>Сприйняття у всіх різне. Хтось бачить образи, хтось просто відчуває, хтось «просто знає» без пояснень. Усе це працює.</p>
+            <p>Результат – це не те, що трапилося на сесії. Це те, що починає змінюватися в житті після.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Это нормально – и это не значит, что ничего не происходит.</p>
+            <p>Многие переживают: «а вдруг у меня не получится» или «я не тот тип». Почти всегда это оказывается напрасным.</p>
+            <p>Восприятие у всех разное. Кто-то видит образы, кто-то просто чувствует, кто-то «просто знает» без объяснений. Всё это работает.</p>
+            <p>Результат – это не то, что случилось на сессии. Это то, что начинает меняться в жизни после.</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span class="lang-uk">Чи буде мені погано після сесії?</span><span class="lang-ru">Будет ли мне плохо после сессии?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <span class="lang-uk">
+            <p>Може бути легка втома – як після чесної, глибокої розмови. Це нормально і не повинно лякати.</p>
+            <p>У наступні кілька днів часто приходять усвідомлення. Змінюється реакція на звичні ситуації. Щось, що раніше чіпляло – перестає.</p>
+            <p>У когось зміни помітні одразу. У когось – поступово, протягом 1–2 тижнів. Обидва варіанти – це робота.</p>
+          </span>
+          <span class="lang-ru">
+            <p>Может быть лёгкая усталость – как после честного, глубокого разговора. Это нормально и не должно пугать.</p>
+            <p>В следующие несколько дней часто приходят осознания. Меняется реакция на привычные ситуации. Что-то, что раньше цепляло – перестаёт.</p>
+            <p>У кого-то изменения заметны сразу. У кого-то – постепенно, в течение 1–2 недель. Оба варианта – это работа.</p>
+          </span>
+        </div>
+      </div>
+
+    </div>
+    <div class="faq-cta-wrap">
+      <p style="color:var(--muted);margin-bottom:16px;"><span class="lang-uk">Залишилося питання, якого тут немає?</span><span class="lang-ru">Остался вопрос, которого здесь нет?</span></p>
+      <a href="https://t.me/" class="btn btn-outline"><span class="lang-uk">Написати Світлані</span><span class="lang-ru">Написать Светлане</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FORM ── -->
+<section id="form-section">
+  <div class="container">
+    <span class="section-label"><span class="lang-uk">Перший крок</span><span class="lang-ru">Первый шаг</span></span>
+    <h2 class="section-title" style="margin-bottom:8px;"><span class="lang-uk">Заповніть коротку анкету</span><span class="lang-ru">Заполните короткую анкету</span></h2>
+    <p class="section-sub"><span class="lang-uk">Це займе 2–3 хвилини. Я прочитаю ваші відповіді особисто і напишу протягом дня.</span><span class="lang-ru">Это займёт 2–3 минуты. Я прочитаю ваши ответы лично и напишу в течение дня.</span></p>
+    <div class="form-wrap">
+      <iframe
+        src="./form-dna-v2.html"
+        class="form-frame"
+        title="Анкета – первый шаг"
+        scrolling="no"
+        onload="resizeFrame(this)"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section id="final-cta">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="section-label"><span class="lang-uk">Перший крок</span><span class="lang-ru">Первый шаг</span></span>
+      <h2 class="cta-title"><span class="lang-uk">Якщо ви втомилися ходити по колу - час знайти причину.</span><span class="lang-ru">Если вы устали ходить по кругу - пора найти причину.</span></h2>
+      <div class="cta-text">
+        <span class="lang-uk">Почніть з однієї зустрічі. Ви вже на першій сесії зрозумієте, звідки росте ваша ситуація.<br>Без зобов'язань. Без тиску. Просто - перший крок.</span>
+        <span class="lang-ru">Начните с одной встречи. Вы уже на первой сессии поймёте, откуда растёт ваша ситуация.<br>Без обязательств. Без давления. Просто - первый шаг.</span>
+      </div>
+      <div class="cta-actions">
+        <a href="#form-section" class="btn btn-white"><span class="lang-uk">Записатися на діагностичну сесію</span><span class="lang-ru">Записаться на диагностическую сессию</span></a>
+        <a href="https://t.me/" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:#fff;"><span class="lang-uk">Написати в Telegram</span><span class="lang-ru">Написать в Telegram</span></a>
+      </div>
+      <div class="cta-note"><span class="lang-uk">Або напишіть - я відповім на запитання і допоможу розібратися, чи підходить вам цей формат.</span><span class="lang-ru">Или напишите - я отвечу на вопросы и помогу разобраться, подходит ли вам этот формат.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name"><span class="lang-uk">Світлана Худякова</span><span class="lang-ru">Светлана Худякова</span></div>
+        <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;"><span class="lang-uk">Регресолог · Гіпнотерапевт</span><span class="lang-ru">Регрессолог · Гипнотерапевт</span></div>
+      </div>
+      <div class="footer-links">
+        <span style="color:rgba(255,255,255,0.25);font-style:italic;font-size:0.8rem;">
+          <span class="lang-uk">
+            Telegram: [буде додано] &nbsp;·&nbsp;
+            Email: [буде додано] &nbsp;·&nbsp;
+            Phone: [буде додано]
+          </span>
+          <span class="lang-ru">
+            Telegram: [будет добавлено] &nbsp;·&nbsp;
+            Email: [будет добавлено] &nbsp;·&nbsp;
+            Phone: [будет добавлено]
+          </span>
+        </span>
+      </div>
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.25);"><span class="lang-uk">© 2025 Всі права захищені</span><span class="lang-ru">© 2025 Все права защищены</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── LANGUAGE MODAL ── -->
+<div class="lang-overlay" id="lang-overlay">
+  <div class="lang-modal">
+    <h3>Ласкаво просимо</h3>
+    <p>Оберіть, будь ласка, зручну мову сайту.</p>
+    <div class="lang-opts">
+      <button class="lang-btn" onclick="initLang('uk')">Українська</button>
+      <button class="lang-btn" onclick="initLang('ru')">Русский</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── VIDEO MODAL ── -->
+<div class="video-modal-overlay" id="video-modal-overlay" onclick="closeVideoModal(event)">
+  <div class="video-modal-content" onclick="event.stopPropagation()">
+    <button class="video-modal-close" onclick="closeVideoModal(event)">&times;</button>
+    <video class="video-player" id="video-player" controls playsinline autoplay>
+      <source src="" type="video/mp4" id="video-source">
+    </video>
+  </div>
+</div>
+
+<!-- ── BACK TO TOP ── -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  const LANG_KEY = 'site_lang';
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    const btnUk = document.getElementById('btn-lang-uk');
+    const btnRu = document.getElementById('btn-lang-ru');
+    if (btnUk) btnUk.classList.toggle('active', lang === 'uk');
+    if (btnRu) btnRu.classList.toggle('active', lang === 'ru');
+  }
+
+  function initLang(lang) {
+    localStorage.setItem(LANG_KEY, lang);
+    applyLang(lang);
+    document.getElementById('lang-overlay').classList.remove('active');
+  }
+
+  function setLang(lang) {
+    localStorage.setItem(LANG_KEY, lang);
+    applyLang(lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem(LANG_KEY);
+    if (savedLang) {
+      applyLang(savedLang);
+    } else {
+      applyLang('uk'); // Default
+      setTimeout(() => {
+        const overlay = document.getElementById('lang-overlay');
+        if (overlay) overlay.classList.add('active');
+      }, 200);
+    }
+  });
+
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const toggle = btn.querySelector('.faq-toggle');
+    const isOpen = answer.style.display === 'block';
+    // close all
+    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.faq-toggle').forEach(t => t.textContent = '+');
+    // open clicked if was closed
+    if (!isOpen) {
+      answer.style.display = 'block';
+      toggle.textContent = '−';
+    }
+  }
+
+  function resizeFrame(iframe) {
+    try {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 40 + 'px';
+    } catch(e) {}
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Burger menu
+  function toggleMenu() {
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobile-menu');
+    const open = burger.classList.toggle('open');
+    menu.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open);
+    // Lock body scroll when menu open
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  function closeMenu() {
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobile-menu');
+    burger.classList.remove('open');
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  // Close menu on outside click
+  document.addEventListener('click', function(e) {
+    const nav = document.getElementById('main-nav');
+    if (!nav.contains(e.target)) closeMenu();
+  });
+
+  // Video Modal Logic
+  const videoModal = document.getElementById('video-modal-overlay');
+  const videoPlayer = document.getElementById('video-player');
+  const videoSource = document.getElementById('video-source');
+
+  function openVideoModal(videoSrc) {
+    if(!videoPlayer || !videoSource) return;
+    videoSource.src = videoSrc;
+    videoPlayer.load();
+    videoModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    videoPlayer.play().catch(e => console.log('Auto-play prevented'));
+  }
+
+  function closeVideoModal(e) {
+    if (e && e.target !== videoModal && e.target !== document.querySelector('.video-modal-close')) return;
+    if(videoModal) videoModal.classList.remove('active');
+    if(videoPlayer) {
+      videoPlayer.pause();
+    }
+    if(videoSource) videoSource.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Carousel Layout & Autoplay
+  const casesCarousel = document.getElementById('client-stories-carousel');
+  if (casesCarousel) {
+    const btnPrev = document.getElementById('cases-prev');
+    const btnNext = document.getElementById('cases-next');
+    
+    // Width of standard card + gap for scrolling exactly one position
+    const getScrollAmount = () => {
+      const card = casesCarousel.querySelector('.case-card');
+      return card ? card.offsetWidth + 32 : 452;
+    };
+    
+    if (btnPrev && btnNext) {
+      btnPrev.addEventListener('click', () => {
+        casesCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+      });
+      btnNext.addEventListener('click', () => {
+        casesCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+      });
+    }
+
+    let autoplayInterval;
+    const startAutoplay = () => {
+      autoplayInterval = setInterval(() => {
+        if (casesCarousel.scrollLeft + casesCarousel.clientWidth >= casesCarousel.scrollWidth - 10) {
+          casesCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          casesCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        }
+      }, 5000);
+    };
+
+    startAutoplay();
+    
+    // Pause on hover
+    const wrapper = document.querySelector('.cases-carousel-container');
+    if (wrapper) {
+      wrapper.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+      wrapper.addEventListener('mouseleave', startAutoplay);
+      wrapper.addEventListener('touchstart', () => clearInterval(autoplayInterval), {passive: true});
+      wrapper.addEventListener('touchend', startAutoplay, {passive: true});
+    }
+  }
+
+  // Scroll Animations
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-up').forEach(el => scrollObserver.observe(el));
+
+  // Back to Top functionality
+  const backToTopBtn = document.getElementById('backToTop');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>
+</body>
+</html>
+
