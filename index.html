@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Найти причину, а не симптом | Регрессивная терапия онлайн| Светлана Худякова</title>
-  <meta name="description" content="Работа с глубинными причинами тревоги, отношений и внутренних состояний. Без эзотерики. Онлайн-сессии с мягким и безопасным подходом.">
+  <title>Регрессивная терапия – найти причину, не просто полегчать | Светлана Худякова</title>
+  <meta name="description" content="Регрессивная и гипнотерапия онлайн. Работаю с причиной – не с симптомами. Без эзотерики. Если вы уже пробовали и не помогло – именно с этого начнём.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -789,6 +789,43 @@
       
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
       .footer-links { flex-direction: column; gap: 12px; }
+    }
+
+    /* ── MOBILE FIXES (Explicitly Added) ── */
+    @media (max-width: 768px) {
+      /* 1. Make all content fit screen width (no horizontal scroll) */
+      body, html { max-width: 100vw; overflow-x: hidden !important; }
+      
+      /* 6. Fix spacing: side padding 16px */
+      .container { width: 100% !important; max-width: 100% !important; padding-left: 16px !important; padding-right: 16px !important; box-sizing: border-box !important; }
+      
+      /* 2. Stack all blocks vertically (1 column) */
+      .about-grid, .method-grid, .steps-grid, .cards-grid, .cases-grid, .offers-grid, .edu-two-cols, .edu-grid, .video-reviews-grid, .about-stats, .footer-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+      }
+      
+      /* 3. Fix hero section */
+      h1, .hero-title { font-size: 28px !important; line-height: 1.25 !important; }
+      .hero-cta { width: 100% !important; display: flex !important; justify-content: center !important; text-align: center !important; }
+      
+      /* 4. Fix images: no cropping, full width */
+      img, video { max-width: 100% !important; height: auto !important; }
+      .hero-bg-image { object-fit: cover !important; } /* Exception to prevent broken hero cover */
+      
+      /* 5. Fix about section: image on top, text below */
+      .about-photo { order: -1 !important; width: 100% !important; max-width: 100% !important; margin-bottom: 24px !important; display: block !important; }
+      
+      /* 7. Ensure all buttons and inputs are full width */
+      .btn, input, select, textarea { width: 100% !important; box-sizing: border-box !important; }
+      
+      /* Button exceptions so UI components don't break */
+      .cases-nav-btn { width: 44px !important; }
+      .faq-toggle { width: 28px !important; }
+      .header-lang button { width: auto !important; }
+      .burger { width: 40px !important; }
+      .nav-logo img { width: auto !important; }
     }
   </style>
 </head>
